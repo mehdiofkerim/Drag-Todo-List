@@ -1,0 +1,117 @@
+// const $ = document 
+// const todos = $.querySelectorAll('.todo')
+// const allStatus = $.querySelectorAll('.status')
+// let draggableTodo = null
+
+// todos.forEach((todo) =>{
+//   todo.addEventListener('dragstart' , dragStart)
+//   todo.addEventListener('dragend' , dragEnd)
+// })
+
+// function dragStart(){
+//   draggableTodo = this
+//   setTimeout(() => {
+//     this.style.display = 'none'
+//   }, 0);
+//   console.log('drag Start')
+// }
+
+// function dragEnd(){
+//   draggableTodo = null
+//   setTimeout(() => {
+//     this.style.display = 'block'
+//   }, 0);
+//   console.log('drag End')
+// }
+
+// allStatus.forEach((status) =>{
+//   status.addEventListener('dragover' , dragOver)
+//   status.addEventListener('dragenter' , dragEnter)
+//   status.addEventListener('dragleave' , dragLeave)
+//   status.addEventListener('drop' , dragDrop)
+// })
+
+// function dragOver(e){
+//   e.preventDefault()
+// }
+
+// function dragEnter(){
+//   this.style.border = '1px dashed #ccc'
+//   console.log('drag Enter')
+// }
+
+// function dragLeave(){
+//   this.style.border = 'none'
+//   console.log('drag Leave')
+// }
+
+// function dragDrop(){
+//   this.style.border = 'none'
+//   this.appendChild(draggableTodo)
+// }
+
+// // --Modals--
+// const btns = $.querySelectorAll("[data-target-modal]")
+// const closeModal = $.querySelectorAll('.close-modal')
+// const overlay = $.getElementById('overlay')
+
+// btns.forEach((btn) => {
+//   btn.addEventListener('click' , function(){
+//     $.querySelector(btn.dataset.targetModal).classList.add('active')
+//     overlay.classList.add('active')
+//   })
+// });
+
+// closeModal.forEach((btn) =>{
+//   btn.addEventListener('click' , function(){
+//     btn.addEventListener('click' , function(){
+//       const modalId = btn.closest('.modal')
+//       modalId.classList.remove('active')
+//       overlay.classList.remove('active')
+//     })
+//   })
+// })
+
+// window.addEventListener('click' ,function(event){
+//   if(event.target == overlay){
+//     const modalId = $.querySelectorAll('.modal')
+//     modalId.forEach(function(modal){
+//       modal.classList.remove('active')
+//       overlay.classList.remove('active')
+//     })
+//   }
+// })
+
+// // --creat Todo--
+// const todo_submit = $.getElementById('todo_submit')
+// todo_submit.addEventListener('click' , creatTodo)
+// function creatTodo(){
+//   // --Creat New Div--
+//   const newDiv = $.createElement('div')
+//   const inputValue = $.getElementById('todo_input').value
+//   const txt = $.createTextNode(inputValue)
+
+//   newDiv.appendChild(txt)
+//   newDiv.classList.add('todo')
+//   newDiv.setAttribute('draggable' , 'true')
+
+//   // --creat New Span--
+//   const newSpan = $.createElement('span')
+//   const spanTxt = $.createTextNode('\u00d7')
+//   newSpan.appendChild(spanTxt)
+//   newSpan.classList.add('close')
+
+//   newDiv.appendChild(newSpan)
+
+//   no_status.appendChild(newDiv)
+
+//   newSpan.addEventListener('click' , function(){
+//     newDiv.remove()
+//   })
+//   $.getElementById('todo_input').value = ''
+//   newDiv.addEventListener('dragstart' , dragStart)
+//   newDiv.addEventListener('dragend' , dragEnd)
+
+//   todo_form.classList.remove('active')
+//   overlay.classList.remove('active')
+// }
